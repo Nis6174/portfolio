@@ -1,0 +1,346 @@
+/* ===== Base Styles ===== */
+body {
+  background-color: teal;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* ===== Desktop Icons ===== */
+.desktop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  transition: all 0.2s ease;
+  padding: 1rem;
+  border-radius: 8px;
+  min-width: 100px;
+}
+
+.icon:hover {
+  background-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.icon img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.icon span {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ===== Windows ===== */
+.window {
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  z-index: 10;
+  width: 450px;
+  max-width: 90vw;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.window-body {
+  padding: 1.5rem;
+  line-height: 1.6;
+  font-size: 14px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+
+.window-body p {
+  margin-bottom: 1rem;
+}
+
+.window-body ul {
+  padding-left: 1.5rem;
+}
+
+.window-body li {
+  margin-bottom: 0.8rem;
+}
+
+.window-body a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.window-body a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Button Styles ===== */
+.button-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.download-btn:hover {
+  background-color: #b0b0b0;
+  border: 2px inset #c0c0c0;
+}
+
+/* ===== Projects Window Specific ===== */
+#projects {
+  width: 520px;
+  max-width: 90vw;
+}
+
+#projects .window-body {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#projects ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#projects ul li {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+#projects ul li:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+  transform: translateX(5px);
+}
+
+#projects ul li strong {
+  color: #0066cc;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+#projects ul li::before {
+  content: "📁 ";
+  margin-right: 0.5rem;
+}
+
+#projects ul li .click-hint {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-top: 0.3rem;
+  opacity: 0.7;
+}
+
+/* ===== Project Detail Windows ===== */
+.project-detail {
+  width: 550px;
+  max-width: 95vw;
+}
+
+.project-detail .window-body {
+  padding: 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.project-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: #0066cc;
+  font-size: 18px;
+}
+
+.project-description {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.project-image {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.tech-stack h4,
+.project-comment h4 {
+  margin: 1.5rem 0 0.8rem 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  background-color: #0066cc;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.project-comment p {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border-left: 4px solid #0066cc;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .desktop {
+    gap: 2rem;
+    padding: 1rem;
+    justify-content: center;
+  }
+  
+  .window {
+    width: 95% !important;
+    left: 2.5% !important;
+    top: 80px !important;
+  }
+  
+  #projects {
+    width: 95% !important;
+  }
+  
+  #projects .window-body {
+    font-size: 13px;
+    padding: 1rem;
+  }
+  
+  #projects ul li {
+    padding: 0.8rem;
+    font-size: 13px;
+  }
+  
+  .project-detail {
+    width: 95% !important;
+    left: 2.5% !important;
+    top: 60px !important;
+  }
+  
+  .project-detail .window-body {
+    padding: 1rem;
+    font-size: 13px;
+  }
+  
+  .tech-tags {
+    gap: 0.3rem;
+  }
+  
+  .tech-tag {
+    font-size: 11px;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .icon {
+    min-width: 80px;
+  }
+  
+  .icon img {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .icon span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .desktop {
+    gap: 1.5rem;
+  }
+  
+  .icon img {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .window-body {
+    padding: 1rem;
+    font-size: 13px;
+  }
+}
+
+/* ===== Window Positioning Variations ===== */
+#about {
+  top: 120px;
+  left: 150px;
+}
+
+#projects {
+  top: 160px;
+  left: 200px;
+}
+
+#links {
+  top: 200px;
+  left: 250px;
+}
+
+#resume {
+  top: 240px;
+  left: 300px;
+}

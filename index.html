@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio 3.1</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="desktop">
+    <div class="icon" onclick="openWindow('about')">
+      <img src="https://icons.iconarchive.com/icons/hopstarter/soft-scraps/128/Button-Info-icon.png" alt="About">
+      <span>About</span>
+    </div>
+    <div class="icon" onclick="openWindow('projects')">
+      <img src="https://icons.iconarchive.com/icons/hopstarter/soft-scraps/128/Folder-icon.png" alt="Projects">
+      <span>Projects</span>
+    </div>
+    <div class="icon" onclick="openWindow('links')">
+      <img src="https://icons.iconarchive.com/icons/hopstarter/soft-scraps/128/Email-icon.png" alt="Links">
+      <span>Links</span>
+    </div>
+    <div class="icon" onclick="openWindow('resume')">
+      <img src="https://icons.iconarchive.com/icons/hopstarter/soft-scraps/128/Document-Microsoft-Excel-icon.png" alt="Resume">
+      <span>Resume</span>
+    </div>
+  </div>
+
+  <!-- About Window -->
+  <div class="window" id="about" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">About.txt</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('about')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p><strong>二素（ニス）</strong>です。</p>
+      <p>LinuxなどのCLIが好き。レガシーな機器も好きです。</p>
+      <p>IT系の学校で学びながら、インフラやセキュリティに関心を持って勉強しています。</p>
+      <p>新しい技術を学ぶことが好きで、特にサーバー構築やネットワークセキュリティに興味があります。</p>
+      <p>詳細につきましては、<strong>Resume</strong>から履歴書のダウンロードをお願いします。</p>
+    </div>
+  </div>
+
+  <!-- Projects Window -->
+  <div class="window" id="projects" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">Projects</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('projects')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <ul>
+        <li onclick="openProjectDetail('Cyder Safety Navigators')">
+          <strong>Cyder Safety Navigators 2023</strong> - 1年次 進級制作展 展示作品
+          <span class="click-hint">クリックで詳細を表示</span>
+        </li>
+        <li onclick="openProjectDetail('Hizurun-EC')">
+          <strong>Hizurun-EC 2024</strong> - 2年次 進級制作展 展示作品
+          <span class="click-hint">クリックで詳細を表示</span>
+        </li>
+        <li onclick="openProjectDetail('Game-wiki')">
+          <strong>ドルフロ2 wiki（未公開）</strong> - 流行りのローコード開発をお試し
+          <span class="click-hint">クリックで詳細を表示</span>
+        </li>
+        <li onclick="openProjectDetail('portfolio-site')">
+          <strong>Portfolio 3.1</strong> - レトロOS風ポートフォリオサイト（このサイトです）
+          <span class="click-hint">クリックで詳細を表示</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Project Detail Windows -->
+  <div class="window project-detail" id="Cyder Safety Navigators-detail" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">🖥️ Cyder Safety Navigators 2023 - 詳細</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('Cyder Safety Navigators-detail')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="project-header">
+        <h3>Cyder Safety Navigators 2023</h3>
+        <p class="project-description">セキュリティクイズサイト</p>
+      </div>
+      
+      <div class="project-image">
+        <img src="https://via.placeholder.com/400x200/0066cc/ffffff?text=Quiz+App+PHP" alt="Quiz-site Screenshot">
+      </div>
+      
+      <div class="tech-stack">
+        <h4>🛠️ 技術スタック</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">XAMPP</span>
+        </div>
+      </div>
+      
+      <div class="project-comment">
+        <h4>💭 一言コメント</h4>
+        <p>初めてのチームでのプロジェクト、初めての進級制作展の作品です。<br>本格的なWebアプリケーションの作成を目指しました。一年目にしては頑張ったと思います。（初学者のごり押しコーディングですが...）</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="window project-detail" id="Hizurun-EC-detail" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">🖥️ Hizurun-EC - 詳細</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('Hizurun-EC-detail')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="project-header">
+        <h3>Hizurun-EC</h3>
+        <p class="project-description">Amazonのようなショッピングサイト</p>
+      </div>
+      
+      <div class="project-image">
+        <img src="https://via.placeholder.com/400x200/6b46c1/ffffff?text=Synesthesia+World" alt="EC-site Screenshot">
+      </div>
+      
+      <div class="tech-stack">
+        <h4>🛠️ 技術スタック</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Laravel (PHP)</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">CentOS 7</span>
+          <span class="tech-tag">Apache</span>
+          <span class="tech-tag">Let's Encrypt</span>
+          <span class="tech-tag">Figma</span>
+          <span class="tech-tag">GitHub</span>
+        </div>
+      </div>
+      
+      <div class="project-comment">
+        <h4>💭 一言コメント</h4>
+        <p>私はバックエンドを担当しました。DB構成やサーバ構築など手を動かすより頭を使う部分が多かったですが、何とか物にできました。<br>フレームワークなど使用し、技術スタックもレベルアップしているのでやりごたえがありました。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="window project-detail" id="Game-wiki-detail" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">🖥️ ドルフロ2 wiki - 詳細</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('Game-wiki-detail')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="project-header">
+        <h3>ドルフロ2 wiki（非公開）</h3>
+        <p class="project-description">流行りのローコード開発。学習用なので非公開です。</p>
+      </div>
+      
+      <div class="project-image">
+        <img src="images/キャラ一覧.png" alt="Game-wiki-1 Screenshot">
+        <img src="images/キャラ詳細(1).png" alt="Game-wiki-2 Screenshot">
+      </div>
+      
+      <div class="tech-stack">
+        <h4>🛠️ 技術スタック</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">App Builder（Low-Code）</span>
+          <span class="tech-tag">XAMPP</span>
+        </div>
+      </div>
+      
+      <div class="project-comment">
+        <h4>💭 一言コメント</h4>
+        <p>流行りのローコード開発をやってみたかったので、あえてページ数の多いゲームwikiを作ることに。ドラッグ&ドロップでこのクオリティができるのは感動しました。<br>使用したのは、<strong>Infragistics App Builder</strong>です。かなりおすすめ。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="window project-detail" id="portfolio-site-detail" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">🌐 Portfolio 3.1 - 詳細</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('portfolio-site-detail')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="project-header">
+        <h3>Portfolio 3.1</h3>
+        <p class="project-description">レトロOS風ポートフォリオサイト（このサイトです）</p>
+      </div>
+      
+      <div class="project-image">
+        <img src="images/portfolio.png" alt="Portfolio Site Screenshot">
+      </div>
+      
+      <div class="tech-stack">
+        <h4>🛠️ 技術スタック</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">98.css</span>
+          <span class="tech-tag">Responsive Design</span>
+        </div>
+      </div>
+      
+      <div class="project-comment">
+        <h4>💭 一言コメント</h4>
+        <p>レトロなOSのUIを現代的な技術で再現しました。ウィンドウの移動や細かな動的処理など、使いやすさにもこだわりました。<br>ただの趣味です。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Links Window -->
+  <div class="window" id="links" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">Links</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('links')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <ul>
+        <li><a href="https://github.com/Nis6174" target="_blank">📱 GitHub</a>：Nis6174</li>
+        <li><a href="https://discord.com/users/652516485037686805" target="_blank">👾 Discord</a>：Nis</li>
+        <li><a>📧 Email</a>：8.sinis.8 [at] gmail.com</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Resume Window -->
+  <div class="window" id="resume" style="display:none;">
+    <div class="title-bar">
+      <div class="title-bar-text">Resume.pdf</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('resume')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>以下のボタンから履歴書をダウンロードできます。<br>※Excelファイル。フォーマットは学校指定のものです。</p>
+      <div class="button-container">
+        <a href="assets/Resume.xlsx" target="_blank" class="download-btn">📄 履歴書を開く</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
